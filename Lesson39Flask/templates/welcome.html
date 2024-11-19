@@ -1,0 +1,31 @@
+
+
+{% if first_name %}
+    <h1>hello world name: {{first_name}} and family name: {{last_name}}</h1>
+{% else %}
+    <h2 style="color:red"> Not logged in </h2>
+{% endif %}
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Day of the week</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(0, listfromdb|length) %}
+            <tr>
+                <td>{{i + 1}}</td>
+                <td>{{listfromdb[i]}}</td>
+            </tr>
+        {% endfor %} 
+    </tbody> 
+
+</table>
+        <ol>
+        {% for element in listfromdb %}
+            <li>{{element}}</li>
+            {% endfor %} 
+        </ol>

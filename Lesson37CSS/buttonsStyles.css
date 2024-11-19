@@ -1,0 +1,83 @@
+#subscribe {
+    background-color: rgb(200, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    height: 35px;
+    width: 107px;
+}
+
+#subscribe:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#subscribe:active {
+    opacity: 0.4;
+}
+
+#join {
+    height: 35px;
+    width: 60px;
+    background-color: white;
+    border: 1px solid rgb(41, 118, 211);
+    color: rgb(41, 118, 211);
+    margin-left: 8px;
+    margin-right: 9px;
+    border-radius: 2px;
+}
+
+#join:hover {
+    cursor: pointer;
+    background-color: rgb(41, 118, 211);
+    color: white;
+}
+
+#join:active {
+    opacity: 0.8;
+}
+
+#tweet {
+    height: 35px;
+    width: 75px;
+    border: none;
+    background-color: rgb(0, 158, 255);
+    border-radius: 18px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    /* transition: box-shadow 200ms; */
+}
+
+#tweet:hover{
+    box-shadow: 0px 5px 5px rgb(220,220,220);
+    cursor: pointer;
+}
+
+#tweet:active {
+    opacity: 0.5;
+}
+
+
+#amazon {
+    width: 170px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(255, 216, 20);
+}
+
+#amazon:hover {
+    cursor: pointer;
+    background-color: rgb(173, 170, 13);
+}
+
+#amazon:active {
+    border: 1px solid black;
+    box-shadow: 0px 0px 0px 3px rgb(186,246,246), inset 0 0 0 2px white;
+    background-color: rgb(197, 189, 39);
+    
+}
+
+
+

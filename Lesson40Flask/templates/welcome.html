@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+
+{% block title %} News Feed {% endblock %}
+    
+
+
+{% block content %}
+    <!-- hardcoded -->
+    <div class = "container">
+        <section class = "news-article">
+            <h3> Article 1 </h3>
+            <p> This is the first article </p>
+            <img src="/static/images/news1.jpg" alt="" srcset="">
+        </section>
+    </div>
+    
+     <!--dinamic render by the loop  -->
+    {% for article in news_list %}
+        <div class = "container">
+            <section class = "news-article">
+                <h3> {{ article.title }} - {{ today }} </h3>
+                <p> {{ article.content }}  </p>
+                {% if show_image == True %}
+                    <img src="{{article.img}}"  alt="" srcset="">
+                {% endif %}
+            </section>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+
+
+

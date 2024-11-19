@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign in Form</title>
+</head>
+<body>
+    <a href="index.html">Back to Main page</a>
+    <h1>Sign in to the system</h1>
+
+    <form>
+        <h2>Create an account</h2>
+        <!-- username -->
+        <div>
+           <label for="username">Username:</label> 
+           <input type="text" id="username" name ="username" required>
+        </div>
+        <!-- password -->
+         <div>
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password" required>
+         </div>
+         <!-- confirm password -->
+          <div>
+            <label for="confirmPassword">Confirm Password: </label>
+            <input type="password" name="confirmPassword" id="confirmPassword" required>
+          </div>
+            <!-- email -->
+        <div>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <!-- birh date -->
+         <div>
+            <label for="birthDate">Birth Date: </label>
+            <input type="date" name="birthDate" id="birthDate" required>
+         </div>
+        
+         <!-- gender -->
+        <div>
+            <label for="gender">Choose your gender</label>
+            <select name="gender" id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <!-- do you want to receive emails? -->
+         <div>
+            Do you want to receive emails?
+            <label for="yes">Yes</label>
+            <input type="radio" name="receiveEmails" id="yes" value="yes">
+            <label for="no">No</label>
+            <input type="radio" name="receiveEmails" id="no" value="no">
+            <label for="decide later">Decide later</label>
+            <input type="radio" name="receiveEmails" id="decide later" value="decide later">
+         </div>
+
+         <!-- upload photo -->
+          <div>
+            <br>
+            <label for="photo">Upload your photo</label>
+            <input type="file" name="photo" id="photo" accept="image/*">
+            <br>
+            <br>
+          </div>
+
+
+         <!-- agree with terms and conditions -->
+          <div>
+            <label for="agree">I agree with terms and conditions</label>
+            <input type="checkbox" name="agree" id="agree" required>
+          </div>
+
+        <!-- sign in button -->
+        <br>
+        <input type="submit" value="create account"/>       
+    </form>
+
+
+
+</body>
+</html>

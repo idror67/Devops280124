@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+
+
+{% block title %} Days {% endblock %}
+
+{% block content %}
+    <h1>days of the week</h1>
+
+    <h3>Selected day is : {{selected_day}}</h3>
+    <ul>
+        {% for day in days %}
+            <li>{{day}}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- form to add day -->
+    <form action="/addDay" method="POST">
+        <label for="day">Add day:</label>
+        <input type="text" name="day" id="day">
+        <button type="submit">Add day</button>
+    </form>
+   
+{% endblock %}
+

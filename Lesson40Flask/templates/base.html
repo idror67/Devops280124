@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default   {% endblock %} </title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">News</a>
+        <a href="/showFavorityFlower">Flowers</a>
+        <a href="/days">Days</a>
+        {% if error %}
+            <span>
+                <h4 style="color:red">{{error}}</h4>
+            </span>
+         {% endif %}
+    </nav>
+  
+
+    {% block content %} 
+    <!--  -->
+        default
+    {% endblock %}
+
+
+    <footer>
+        <p> This is the footer </p>
+    
+</body>
+</html>

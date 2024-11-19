@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=sdfs, initial-scale=1.0">
+    <title>Contacts List</title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="contactsTable.html">Home</a>
+            <!-- search box with search label -->
+            <form action="contactsTable.html">
+                <input type="text" placeholder="Name..." id="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="navbar-right">
+            <a href="addContactsForm.html">New Contact</a>
+            <a href="contactsTable.html">View Contacts</a>
+        </div>
+    </nav>
+    <h1 class="h1-center">Contacts Page</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>           
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Arja</td>
+                <td>32423</td>
+                <td>arja@wf.com</td>
+                <td>
+                    <img src="/static/images/arja.png" height="100px">
+                </td>
+                <td>
+                    <button>Edit</button>
+                    <button onclick=deleteRow(this)>Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>John</td>
+                <td>1132423</td>
+                <td>john@theWall.com</td>
+                <td>
+                    <img src="/static/images/john.png" height="100px">
+                </td>
+                <td>
+                    <button>Edit</button>
+                    <button onclick=deleteRow(this)>Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Thyrion</td>
+                <td>234</td>
+                <td>thyrion@KL.com</td>
+                <td>
+                    <img src="/static/images/Thyrion.png" height="100px">
+                </td>
+                <td>
+                    <button>Edit</button>
+                    <button onclick=deleteRow(this)>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/addContact">
+        <button class="center-button">Add new Contact</button>
+    </a>
+    
+    <script src="/static/js/script2.js"></script>
+</body>
+</html>

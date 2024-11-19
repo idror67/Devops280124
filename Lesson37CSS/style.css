@@ -1,0 +1,36 @@
+
+/* #simple, */
+.regular {
+    font-family: cursive;
+    /* padding: 20px; */
+    border: 3px solid yellow;
+}
+
+h1.regular {
+    
+    background-color: rgb(0, 0, 0);
+    color:rgb(19, 83, 38);
+}
+
+#simple {
+    text-align: right;
+}
+
+p {
+   /* font : 15px Tahoma;  */
+   font-size: 18px;
+}
+
+body {
+    background-image: url(https://static.sport.optus.com.au/resources/static/dc54ab23-e81f-46c9-b0ff-43ca728ceee3_euro-2024.jpg);
+    border: 2px solid black;
+}
+
+img {
+    border: 2px solid red;
+    border-radius: 50%;
+    /* padding: 20px; */
+    /* margin: 20px; */
+    box-shadow: 10px -7px 30px rgb(115, 56, 56);
+}
+
