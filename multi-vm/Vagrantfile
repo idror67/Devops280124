@@ -1,0 +1,27 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # create 5 vms with loop on bento/ubuntu-24.04
+  # (1..5).each do |i|
+  #   config.vm.define "server#{i}" do |server|
+  #     server.vm.box = "bento/ubuntu-24.04"
+  # end
+
+
+  config.vm.define "server" do |server|
+    server.vm.box = "bento/ubuntu-24.04"
+
+  end
+
+  # Define a second VM on centos/7
+  config.vm.define "desktop" do |desktop|
+    desktop.vm.box = "centos/7"
+  end
+  
+  
+
+ 
+  
+end
