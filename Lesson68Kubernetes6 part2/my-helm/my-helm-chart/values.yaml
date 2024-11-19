@@ -1,0 +1,7 @@
+staging:
+  samplekey: "samplevalue"
+port: 9000
+
+db_type: mysql
+
+env: "development"
