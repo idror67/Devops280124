@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %} Add contact {% endblock %}
+
+{% block content %}
+    
+    <form class="my-form" action="/createContact" method="post" enctype="multipart/form-data">
+        <h1>Add Contacts Form</h1>
+        <!-- name -->
+        <div>
+            <label id = "fullNameLable" for="fullname">Enter your name:</label>
+            <input type="text" name="fullname" id="fullname" required>
+        </div>
+        <!-- email -->
+        <div>
+            <label for="email">Enter your email:</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <!-- phone -->
+        <div>
+            <label for="phone">Enter your phone:</label>
+            <input type="tel" name="phone" id="phone" required>
+        </div>
+        <!-- Gender -->
+         <div>
+            <label for="gender">Select your gender:</label>
+            <select name="gender" id="gender">
+                <option value="Male">Male</option>    
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>       
+            </select>
+         </div>
+        <!-- upload photo  -->
+        <div>
+            <label for="photo">Upload your photo:</label>
+            <input type="file" name="photo" id="photo" accept="image/*">
+        </div>
+
+         <!-- agree Checkbox -->
+         <div>
+            <label for="agree">I agree:</label>
+            <input type="checkbox" name="agree" id="agree" required>
+        </div>
+        <!-- submit-->
+         <button type="submit">Add to Contacts</button>
+    </form>
+
+    <script src="/static/js/script.js"></script>
+
+{% endblock %}

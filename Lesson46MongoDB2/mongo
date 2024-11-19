@@ -1,0 +1,8 @@
+db.books.insertMany([
+    { title: "Don Quixote", author: "Miguel de Cervantes", year: 1605 },
+    { title: "The Witcher", author: "Andrzej Sapkowski", year: 1990 },
+    { title: "Pride and Prejudice", author: "Jane Austen", year: 1813 },
+    { title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 },
+    { title: "1984", author: "George Orwell", year: 1949 },
+    { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 }
+]);
