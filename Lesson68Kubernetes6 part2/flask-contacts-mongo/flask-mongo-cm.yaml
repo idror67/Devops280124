@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flask-mongo-configmap
+data:
+  DATABASE_TYPE: MONGO
+  MONGO_URI: mongodb://mongo-service:27017/
+  MONGO_HOST: mongo-service.
+  # multiline text
+  

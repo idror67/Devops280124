@@ -1,0 +1,30 @@
+services:
+  my-app:
+    image: idror/my-jenkins-flask-cicdproject:latest
+    ports:
+      - "5002:5000"
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=admin
+      - DB_NAME=mydatabase
+    depends_on:
+      mysql:
+        condition: service_healthy
+  
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: mydatabase
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5  
+    volumes:
+      - mysql-data:/var/lib/mysql  
+  
+volumes:
+  mysql-data:

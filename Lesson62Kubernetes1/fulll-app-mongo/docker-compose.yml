@@ -1,0 +1,33 @@
+services:
+  my-app:
+    image: shashkist/flask-contacts-app
+    ports:
+      - 5053:5052      - 
+    environment:
+      # we will do it later
+      - DATABASE_TYPE=MONGO 
+      - MONGO_URI=mongodb://mongo:27017/
+    volumes:
+      - app-data:/app/static/images
+    depends_on:
+      mongo:
+        condition: service_healthy
+  mongo:
+    image: mongo:4.4.6
+    volumes:
+      - mongo-data:/data/db   
+    healthcheck:
+      test: ["CMD", "mongo", "admin", "--eval", "db.stats()"]
+      interval: 30s
+      timeout: 10s
+      retries: 5  
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    depends_on:
+      mongo:
+        condition: service_healthy
+volumes:
+  mongo-data:
+  app-data:

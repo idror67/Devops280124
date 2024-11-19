@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tacos-app
+  labels:
+    app: tacos-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tacos-app
+  template: #pod defintion
+    metadata:
+      labels:
+        app: tacos-app
+    spec: # container specs
+      containers:
+        - name: tacos-app
+          image: shashkist/tacos-app
+          ports:
+            - containerPort: 8081
+          env:
+          - name: SPRING_DATASOURCE_URL
+            value: jdbc:mysql://mysql-service:3306/tacosdb?createDatabaseIfNotExist=true
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: taco-app-service
+spec:
+ selector:
+   app: tacos-app
+ type: LoadBalancer # external service which can be accessed from outside the cluster
+ ports:
+   - protocol: TCP
+     port: 8081
+     targetPort: 8081   

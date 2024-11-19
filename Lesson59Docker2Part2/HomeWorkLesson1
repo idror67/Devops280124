@@ -1,0 +1,26 @@
+Docker homework 1:
+
+Install docker on your vm.
+docker --version 
+Should be result..
+Pull a Docker Image
+Task: Pull the official nginx Docker image from Docker Hub.
+List Docker Images
+Run a container using the nginx image in detached mode
+Run a container using the nginx image with name second_nginx and port forwarding 8091:80
+Access the nginx application in the browser and submit the screenshot: 
+Should be similar to:
+
+List Running Containers
+Access a Running Container:
+Access the nginx container you just started and view its logs.
+docker logs <container_id>
+Submit the logs(screenshot)
+Stop a Running Containers
+List all containers including the ones not running.
+Remove a Docker Containers
+Task: Remove the nginx containers that you stopped.
+docker rm <container_id>
+Remove a Docker Image
+docker rmi nginx
+Submit the screenshot of the two last commands
