@@ -1,0 +1,49 @@
+Vagrant.configure("2") do |config|
+    # Set the boot timeout to 10 minutes (600 seconds)
+    config.vm.boot_timeout = 600
+
+    # Define Mysql VM
+    config.vm.define "mysql_machine" do |mysql_machine|
+        mysql_machine.vm.box = "bento/ubuntu-24.04"
+        mysql_machine.vm.hostname = "mysqlMachine"
+        # private ip for mysql machine
+        mysql_machine.vm.network "private_network", ip: "192.168.33.20"
+
+        # Provisioning
+        mysql_machine.vm.provision "shell", path: "provisioners/install-mysql.sh"
+        
+        # VirtualBox settings
+        mysql_machine.vm.provider "virtualbox" do |vb|
+            vb.memory = "1024"
+            vb.cpus = 1
+        end
+    end
+
+    # Define Flask VM
+    config.vm.define "flask_vm" do |flask_vm|
+        flask_vm.vm.box = "bento/ubuntu-24.04"
+        flask_vm.vm.hostname = "flaskVM"
+        # private ip for flask machine
+        flask_vm.vm.network "private_network", ip: "192.168.33.10"
+
+        # port forwarding
+        flask_vm.vm.network "forwarded_port", guest: 5052, host: 5053
+        
+        # Synced folder
+        flask_vm.vm.synced_folder "../flask-contacts", "/flask-contacts"
+        
+        # Provisioning
+        flask_vm.vm.provision "shell", path: "provisioners/install-python.sh"
+        flask_vm.vm.provision "shell", path: "provisioners/run-app.sh", run: "always"
+
+        # VirtualBox settings
+        flask_vm.vm.provider "virtualbox" do |vb|
+            vb.memory = "2048"
+            vb.cpus = 2
+        end
+
+    end
+
+
+
+end

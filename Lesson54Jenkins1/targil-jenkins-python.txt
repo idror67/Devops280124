@@ -1,0 +1,11 @@
+To run python simple hello world program 
+ 
+1. create new repository
+2. create inside file python.py
+3. print hello world:
+    print("hello world")
+4. create a jenkins job which will download the code from repository
+5. jenkins job will run python program (you should see in the console hello world)
+6. BONUS: add poll scm (* * * * *) to run job automatically
+7. Make change in git to print hello world with your name
+8. check that jenkins triggered the build
